@@ -1,0 +1,744 @@
+C:\Users\areto\Documents\Progstuff\IN2010\Oblig2>java Oblig2 buildgarage.txt
+Time: 0
+Starting: get-paperwork
+Current Staff: 1
+_________________________________
+Time: 14280
+Finished: get-paperwork
+Starting: call-contractor
+Starting: clean-yard
+Current Staff: 4
+_________________________________
+Time: 14284
+Finished: call-contractor
+Current Staff: 3
+_________________________________
+Time: 230182
+Finished: clean-yard
+Starting: build-foundation
+Current Staff: 2
+_________________________________
+Time: 262316
+Finished: build-foundation
+Starting: build-wall-support
+Starting: lay-electrical-cables
+Starting: call-electrician
+Current Staff: 6
+_________________________________
+Time: 262331
+Finished: call-electrician
+Current Staff: 5
+_________________________________
+Time: 262458
+Finished: lay-electrical-cables
+Current Staff: 4
+_________________________________
+Time: 303548
+Finished: build-wall-support
+Starting: build-walls
+Starting: build-stairs
+Current Staff: 6
+_________________________________
+Time: 307873
+Finished: build-stairs
+Starting: add-2nd-floor
+Current Staff: 8
+_________________________________
+Time: 309675
+Finished: build-walls
+Starting: add-gate
+Current Staff: 7
+_________________________________
+Time: 363997
+Finished: add-gate
+Starting: install-electrical-gate-opener
+Current Staff: 6
+_________________________________
+Time: 405242
+Finished: install-electrical-gate-opener
+Current Staff: 4
+_________________________________
+Time: 429351
+Finished: add-2nd-floor
+Starting: isolate-room
+Current Staff: 3
+_________________________________
+Time: 430593
+Finished: isolate-room
+Starting: furnish-appartment
+Current Staff: 2
+_________________________________
+Time: 484913
+Finished: furnish-appartment
+Current Staff: 0
+_________________________________
+Id: 1
+Name: get-paperwork
+Time needed to finish task: 14280
+Staff needed: 1
+Earliest starting time: 0
+slack: 0
+Ekstra tasks: call-contractor, clean-yard,
+Id: 2
+Name: call-contractor
+Time needed to finish task: 4
+Staff needed: 1
+Earliest starting time: 14280
+slack: 215898
+Ekstra tasks: build-foundation,
+Id: 3
+Name: clean-yard
+Time needed to finish task: 215902
+Staff needed: 3
+Earliest starting time: 14280
+slack: 0
+Ekstra tasks: build-foundation,
+Id: 4
+Name: build-foundation
+Time needed to finish task: 32134
+Staff needed: 2
+Earliest starting time: 230182
+slack: 0
+Ekstra tasks: build-wall-support, lay-electrical-cables, call-electrician,
+Id: 5
+Name: build-wall-support
+Time needed to finish task: 41232
+Staff needed: 4
+Earliest starting time: 262316
+slack: 0
+Ekstra tasks: install-electrical-gate-opener, build-walls, build-stairs,
+Id: 6
+Name: lay-electrical-cables
+Time needed to finish task: 142
+Staff needed: 1
+Earliest starting time: 262316
+slack: 222455
+Ekstra tasks:
+Id: 7
+Name: call-electrician
+Time needed to finish task: 15
+Staff needed: 1
+Earliest starting time: 262316
+slack: 181337
+Ekstra tasks: install-electrical-gate-opener,
+Id: 8
+Name: install-electrical-gate-opener
+Time needed to finish task: 41245
+Staff needed: 2
+Earliest starting time: 363997
+slack: 79671
+Ekstra tasks:
+Id: 9
+Name: build-walls
+Time needed to finish task: 6127
+Staff needed: 4
+Earliest starting time: 303548
+slack: 79671
+Ekstra tasks: add-gate, isolate-room,
+Id: 10
+Name: add-gate
+Time needed to finish task: 54322
+Staff needed: 3
+Earliest starting time: 309675
+slack: 79671
+Ekstra tasks: install-electrical-gate-opener,
+Id: 11
+Name: build-stairs
+Time needed to finish task: 4325
+Staff needed: 2
+Earliest starting time: 303548
+slack: 0
+Ekstra tasks: add-2nd-floor,
+Id: 12
+Name: add-2nd-floor
+Time needed to finish task: 121478
+Staff needed: 4
+Earliest starting time: 307873
+slack: 0
+Ekstra tasks: isolate-room,
+Id: 13
+Name: isolate-room
+Time needed to finish task: 1242
+Staff needed: 3
+Earliest starting time: 429351
+slack: 0
+Ekstra tasks: furnish-appartment,
+Id: 14
+Name: furnish-appartment
+Time needed to finish task: 54320
+Staff needed: 2
+Earliest starting time: 430593
+slack: 0
+Ekstra tasks:
+---------------------
+C:\Users\areto\Documents\Progstuff\IN2010\Oblig2>java Oblig2 buildhouse1.txt
+Time: 0
+Starting: Build-foundation
+Current Staff: 2
+_________________________________
+Time: 4
+Finished: Build-foundation
+Starting: Build-walls
+Starting: Make-floor
+Current Staff: 4
+_________________________________
+Time: 6
+Finished: Make-floor
+Current Staff: 2
+_________________________________
+Time: 8
+Finished: Build-walls
+Starting: Build-roofs
+Current Staff: 4
+_________________________________
+Time: 14
+Finished: Build-roofs
+Starting: Put-on-wallpapers
+Starting: Put-on-tiles
+Starting: Put-carpet-floor
+Current Staff: 7
+_________________________________
+Time: 15
+Finished: Put-on-wallpapers
+Finished: Put-on-tiles
+Current Staff: 2
+_________________________________
+Time: 18
+Finished: Put-carpet-floor
+Starting: Move-in
+Current Staff: 4
+_________________________________
+Time: 22
+Finished: Move-in
+Current Staff: 0
+_________________________________
+Id: 1
+Name: Build-walls
+Time needed to finish task: 4
+Staff needed: 2
+Earliest starting time: 4
+slack: 0
+Ekstra tasks: Build-roofs, Put-on-wallpapers,
+Id: 2
+Name: Build-roofs
+Time needed to finish task: 6
+Staff needed: 4
+Earliest starting time: 8
+slack: 0
+Ekstra tasks: Put-on-wallpapers, Put-on-tiles, Put-carpet-floor,
+Id: 3
+Name: Put-on-wallpapers
+Time needed to finish task: 1
+Staff needed: 2
+Earliest starting time: 14
+slack: 3
+Ekstra tasks: Move-in,
+Id: 4
+Name: Put-on-tiles
+Time needed to finish task: 1
+Staff needed: 3
+Earliest starting time: 14
+slack: 7
+Ekstra tasks:
+Id: 5
+Name: Build-foundation
+Time needed to finish task: 4
+Staff needed: 2
+Earliest starting time: 0
+slack: 0
+Ekstra tasks: Build-walls, Make-floor,
+Id: 6
+Name: Make-floor
+Time needed to finish task: 2
+Staff needed: 2
+Earliest starting time: 4
+slack: 8
+Ekstra tasks: Put-carpet-floor,
+Id: 7
+Name: Put-carpet-floor
+Time needed to finish task: 4
+Staff needed: 2
+Earliest starting time: 14
+slack: 0
+Ekstra tasks: Move-in,
+Id: 8
+Name: Move-in
+Time needed to finish task: 4
+Staff needed: 4
+Earliest starting time: 18
+slack: 0
+Ekstra tasks:
+---------------------
+C:\Users\areto\Documents\Progstuff\IN2010\Oblig2>java Oblig2 buildhouse2.txt
+Build-walls -> Build-roofs -> Put-carpet-floor -> Make-floor -> Build-walls
+---------------------
+C:\Users\areto\Documents\Progstuff\IN2010\Oblig2>java Oblig2 buildrail.txt
+Time: 0
+Starting: Setup-barrack
+Current Staff: 10
+_________________________________
+Time: 3
+Finished: Setup-barrack
+Starting: Prepare-storage
+Starting: Rig-ramspace-reinforcing
+Starting: Build-tunnel
+Starting: Build-intersection
+Starting: Build-towerfoundation-1
+Starting: Build-towerfoundation-2
+Current Staff: 56
+_________________________________
+Time: 4
+Finished: Rig-ramspace-reinforcing
+Starting: Make-armouring-tower-1
+Starting: Make-armouring-tower-2
+Starting: Make-armouring-arch
+Current Staff: 64
+_________________________________
+Time: 5
+Finished: Prepare-storage
+Starting: Install-railing
+Current Staff: 70
+_________________________________
+Time: 12
+Finished: Install-railing
+Current Staff: 60
+_________________________________
+Time: 16
+Finished: Make-armouring-arch
+Starting: Encase-and-armour-arch
+Current Staff: 61
+_________________________________
+Time: 28
+Finished: Build-intersection
+Starting: Clean-intersection
+Current Staff: 61
+_________________________________
+Time: 29
+Finished: Make-armouring-tower-2
+Current Staff: 57
+_________________________________
+Time: 33
+Finished: Build-tunnel
+Starting: Clean-tunnel
+Current Staff: 57
+_________________________________
+Time: 38
+Finished: Build-towerfoundation-1
+Current Staff: 45
+_________________________________
+Time: 44
+Finished: Make-armouring-tower-1
+Starting: Encase-and-armour-tower-1
+Current Staff: 46
+_________________________________
+Time: 46
+Finished: Encase-and-armour-arch
+Starting: Cast-arch
+Current Staff: 48
+_________________________________
+Time: 48
+Finished: Build-towerfoundation-2
+Finished: Clean-intersection
+Starting: Encase-and-armour-tower-2
+Current Staff: 29
+_________________________________
+Time: 51
+Finished: Clean-tunnel
+Starting: Put-lane-tunnel-and-intersection
+Current Staff: 24
+_________________________________
+Time: 59
+Finished: Encase-and-armour-tower-1
+Starting: Cast-tower-1
+Current Staff: 26
+_________________________________
+Time: 63
+Finished: Put-lane-tunnel-and-intersection
+Starting: Install-ticketmachine
+Current Staff: 29
+_________________________________
+Time: 64
+Finished: Install-ticketmachine
+Finished: Encase-and-armour-tower-2
+Starting: Cast-tower-2
+Current Staff: 21
+_________________________________
+Time: 66
+Finished: Cast-arch
+Current Staff: 14
+_________________________________
+Time: 119
+Finished: Cast-tower-1
+Starting: Paint-tower-1-with-arch
+Current Staff: 13
+_________________________________
+Time: 124
+Finished: Cast-tower-2
+Starting: Paint-tower-2
+Starting: Stretch-two-maincables
+Current Staff: 22
+_________________________________
+Time: 134
+Finished: Paint-tower-1-with-arch
+Current Staff: 16
+_________________________________
+Time: 136
+Finished: Paint-tower-2
+Current Staff: 10
+_________________________________
+Time: 149
+Finished: Stretch-two-maincables
+Starting: Build-truss-1-with-rods
+Starting: Build-truss-2-with-rods
+Current Staff: 20
+_________________________________
+Time: 179
+Finished: Build-truss-1-with-rods
+Current Staff: 10
+_________________________________
+Time: 186
+Finished: Build-truss-2-with-rods
+Starting: Install-pavement
+Starting: Paint-trusses
+Starting: Paint-cables-and-rods
+Starting: Cast-lane-on-truss
+Current Staff: 29
+_________________________________
+Time: 204
+Finished: Paint-cables-and-rods
+Current Staff: 23
+_________________________________
+Time: 206
+Finished: Install-pavement
+Finished: Cast-lane-on-truss
+Starting: Polish-lane-on-arch
+Current Staff: 13
+_________________________________
+Time: 213
+Finished: Paint-trusses
+Current Staff: 7
+_________________________________
+Time: 218
+Finished: Polish-lane-on-arch
+Current Staff: 0
+_________________________________
+Id: 1
+Name: Install-pavement
+Time needed to finish task: 20
+Staff needed: 10
+Earliest starting time: 186
+slack: 12
+Ekstra tasks:
+Id: 2
+Name: Install-railing
+Time needed to finish task: 7
+Staff needed: 10
+Earliest starting time: 5
+slack: 206
+Ekstra tasks:
+Id: 3
+Name: Install-ticketmachine
+Time needed to finish task: 1
+Staff needed: 10
+Earliest starting time: 63
+slack: 154
+Ekstra tasks:
+Id: 4
+Name: Paint-tower-1-with-arch
+Time needed to finish task: 15
+Staff needed: 6
+Earliest starting time: 119
+slack: 84
+Ekstra tasks:
+Id: 5
+Name: Paint-tower-2
+Time needed to finish task: 12
+Staff needed: 6
+Earliest starting time: 124
+slack: 82
+Ekstra tasks:
+Id: 6
+Name: Paint-trusses
+Time needed to finish task: 27
+Staff needed: 6
+Earliest starting time: 186
+slack: 5
+Ekstra tasks:
+Id: 7
+Name: Paint-cables-and-rods
+Time needed to finish task: 18
+Staff needed: 6
+Earliest starting time: 186
+slack: 14
+Ekstra tasks:
+Id: 8
+Name: Put-lane-tunnel-and-intersection
+Time needed to finish task: 12
+Staff needed: 7
+Earliest starting time: 51
+slack: 143
+Ekstra tasks: Install-ticketmachine, Polish-lane-on-arch,
+Id: 9
+Name: Setup-barrack
+Time needed to finish task: 3
+Staff needed: 10
+Earliest starting time: 0
+slack: 0
+Ekstra tasks: Prepare-storage, Rig-ramspace-reinforcing, Build-tunnel, Build-intersection, Build-towerfoundation-1, Build-towerfoundation-2,
+Id: 10
+Name: Prepare-storage
+Time needed to finish task: 2
+Staff needed: 4
+Earliest starting time: 3
+slack: 206
+Ekstra tasks: Install-railing,
+Id: 11
+Name: Rig-ramspace-reinforcing
+Time needed to finish task: 1
+Staff needed: 4
+Earliest starting time: 3
+slack: 5
+Ekstra tasks: Make-armouring-tower-1, Make-armouring-tower-2, Make-armouring-arch,
+Id: 12
+Name: Build-tunnel
+Time needed to finish task: 30
+Staff needed: 12
+Earliest starting time: 3
+slack: 143
+Ekstra tasks: Clean-tunnel,
+Id: 13
+Name: Clean-tunnel
+Time needed to finish task: 18
+Staff needed: 12
+Earliest starting time: 33
+slack: 143
+Ekstra tasks: Put-lane-tunnel-and-intersection,
+Id: 14
+Name: Build-intersection
+Time needed to finish task: 25
+Staff needed: 12
+Earliest starting time: 3
+slack: 146
+Ekstra tasks: Clean-intersection,
+Id: 15
+Name: Clean-intersection
+Time needed to finish task: 20
+Staff needed: 12
+Earliest starting time: 28
+slack: 146
+Ekstra tasks: Put-lane-tunnel-and-intersection,
+Id: 16
+Name: Build-towerfoundation-1
+Time needed to finish task: 35
+Staff needed: 12
+Earliest starting time: 3
+slack: 11
+Ekstra tasks: Encase-and-armour-tower-1,
+Id: 17
+Name: Build-towerfoundation-2
+Time needed to finish task: 45
+Staff needed: 12
+Earliest starting time: 3
+slack: 0
+Ekstra tasks: Encase-and-armour-tower-2,
+Id: 18
+Name: Make-armouring-tower-1
+Time needed to finish task: 40
+Staff needed: 4
+Earliest starting time: 4
+slack: 5
+Ekstra tasks: Encase-and-armour-tower-1,
+Id: 19
+Name: Make-armouring-tower-2
+Time needed to finish task: 25
+Staff needed: 4
+Earliest starting time: 4
+slack: 19
+Ekstra tasks: Encase-and-armour-tower-2,
+Id: 20
+Name: Make-armouring-arch
+Time needed to finish task: 12
+Staff needed: 4
+Earliest starting time: 4
+slack: 140
+Ekstra tasks: Encase-and-armour-arch,
+Id: 21
+Name: Encase-and-armour-tower-1
+Time needed to finish task: 15
+Staff needed: 5
+Earliest starting time: 44
+slack: 5
+Ekstra tasks: Cast-tower-1,
+Id: 22
+Name: Encase-and-armour-tower-2
+Time needed to finish task: 16
+Staff needed: 5
+Earliest starting time: 48
+slack: 0
+Ekstra tasks: Cast-tower-2,
+Id: 23
+Name: Encase-and-armour-arch
+Time needed to finish task: 30
+Staff needed: 5
+Earliest starting time: 16
+slack: 140
+Ekstra tasks: Cast-arch,
+Id: 24
+Name: Cast-tower-1
+Time needed to finish task: 60
+Staff needed: 7
+Earliest starting time: 59
+slack: 5
+Ekstra tasks: Paint-tower-1-with-arch, Stretch-two-maincables,
+Id: 25
+Name: Cast-tower-2
+Time needed to finish task: 60
+Staff needed: 7
+Earliest starting time: 64
+slack: 0
+Ekstra tasks: Paint-tower-2, Stretch-two-maincables,
+Id: 26
+Name: Cast-arch
+Time needed to finish task: 20
+Staff needed: 7
+Earliest starting time: 46
+slack: 140
+Ekstra tasks: Polish-lane-on-arch,
+Id: 27
+Name: Stretch-two-maincables
+Time needed to finish task: 25
+Staff needed: 10
+Earliest starting time: 124
+slack: 0
+Ekstra tasks: Build-truss-1-with-rods, Build-truss-2-with-rods,
+Id: 28
+Name: Build-truss-1-with-rods
+Time needed to finish task: 30
+Staff needed: 10
+Earliest starting time: 149
+slack: 7
+Ekstra tasks: Install-pavement, Paint-trusses, Paint-cables-and-rods, Cast-lane-on-truss,
+Id: 29
+Name: Build-truss-2-with-rods
+Time needed to finish task: 37
+Staff needed: 10
+Earliest starting time: 149
+slack: 0
+Ekstra tasks: Install-pavement, Paint-trusses, Paint-cables-and-rods, Cast-lane-on-truss,
+Id: 30
+Name: Cast-lane-on-truss
+Time needed to finish task: 20
+Staff needed: 7
+Earliest starting time: 186
+slack: 0
+Ekstra tasks: Polish-lane-on-arch,
+Id: 31
+Name: Polish-lane-on-arch
+Time needed to finish task: 12
+Staff needed: 7
+Earliest starting time: 206
+slack: 0
+Ekstra tasks:
+------------------
+C:\Users\areto\Documents\Progstuff\IN2010\Oblig2>java Oblig2 examplefigure.txt
+Time: 0
+Starting: 1
+Starting: 2
+Current Staff: 6
+_________________________________
+Time: 3
+Finished: 1
+Current Staff: 2
+_________________________________
+Time: 5
+Finished: 2
+Starting: 4
+Starting: 3
+Current Staff: 6
+_________________________________
+Time: 6
+Finished: 3
+Starting: 5
+Current Staff: 7
+_________________________________
+Time: 7
+Finished: 4
+Starting: 6
+Current Staff: 7
+_________________________________
+Time: 10
+Finished: 5
+Current Staff: 4
+_________________________________
+Time: 15
+Finished: 6
+Starting: 8
+Starting: 7
+Current Staff: 5
+_________________________________
+Time: 16
+Finished: 8
+Current Staff: 2
+_________________________________
+Time: 18
+Finished: 7
+Current Staff: 0
+_________________________________
+Id: 1
+Name: 1
+Time needed to finish task: 3
+Staff needed: 4
+Earliest starting time: 0
+slack: 3
+Ekstra tasks: 3,
+Id: 2
+Name: 2
+Time needed to finish task: 5
+Staff needed: 2
+Earliest starting time: 0
+slack: 0
+Ekstra tasks: 3, 4,
+Id: 3
+Name: 3
+Time needed to finish task: 1
+Staff needed: 2
+Earliest starting time: 5
+slack: 1
+Ekstra tasks: 5, 6,
+Id: 4
+Name: 4
+Time needed to finish task: 2
+Staff needed: 4
+Earliest starting time: 5
+slack: 0
+Ekstra tasks: 6,
+Id: 5
+Name: 5
+Time needed to finish task: 4
+Staff needed: 3
+Earliest starting time: 6
+slack: 5
+Ekstra tasks: 7,
+Id: 6
+Name: 6
+Time needed to finish task: 8
+Staff needed: 4
+Earliest starting time: 7
+slack: 0
+Ekstra tasks: 7, 8,
+Id: 7
+Name: 7
+Time needed to finish task: 3
+Staff needed: 2
+Earliest starting time: 15
+slack: 0
+Ekstra tasks:
+Id: 8
+Name: 8
+Time needed to finish task: 1
+Staff needed: 3
+Earliest starting time: 15
+slack: 2
+Ekstra tasks:
+
+

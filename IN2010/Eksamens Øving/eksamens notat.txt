@@ -1,0 +1,9 @@
+Eksamen 2016.
+Oppgave 5:
+a)
+Dybde først søk egner seg ikke her fordi den er ineffektiv for å finne
+korteste vei.
+I tilegg finner ikke DFS alltid korteste sykel, dfs merker nodene den går gjennom
+så hvis den følger en annen vei ignorerer den noder den allerede har gått gjennom.
+
+b)
