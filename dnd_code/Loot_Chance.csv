@@ -1,0 +1,15 @@
+Type,CR_0_to_8,CR_9,CR_10+,mod
+Aberration,0.01,0.4,0.4,1
+Beast,0.01,0.01,0.01,1
+Celestial,0,0,0.6,APL
+Construct,0.01,0.01,0.01,1
+Dragon,0,0,0,1
+Elemental,0,0,0,1
+Fey,0.8,0.8,0.8,APL
+Fiend,0.9,0.9,0.9,APL
+Giant,0.95,0.95,0.95,APL
+Humanoid,0.95,0.95,0.95,APL
+Monstrosity,0.1,0.1,0.1,1
+Ooze,0.8,0.8,0.8,APL
+Plant,0.4,0.4,0.4,1
+Undead,0.2,0.2,0.2,APL
