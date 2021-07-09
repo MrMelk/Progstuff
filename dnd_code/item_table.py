@@ -28,14 +28,17 @@ def Individual_loot(APL, Type, CR, Setting = "High"):
     target = new_Table.loc[new_Table["Type"] == Type]
     name = target.columns[1]    #Gets the column name of the second column to get the value
     val = target[[name]].values[0][0]   #Must be a better way than this but for now it works
+    
+    #Create a roller for dice
+    r = Dice()
 
     if rand <= val:
         if Type == "Aberration":
-            return d12(2) * mul
+            return r.d12(2) * mul
         elif Type == "Beast":
             return 1 * min1(mul - 1)
         elif Type == "Celestial":
-            return d10(2) * APL * min1(mul - 1)
+            return r.d10(2) * APL * min1(mul - 1)
         elif Type == "Construct":
             return 1 * min1(mul - 1)
         elif Type == "Dragon":
@@ -43,21 +46,21 @@ def Individual_loot(APL, Type, CR, Setting = "High"):
         elif Type == "Elemental":
             return 0
         elif Type == "Fey":
-            return d4(1) * APL * mul
+            return r.d4(1) * APL * mul
         elif Type == "Fiend":
-            return d8(2) * APL * mul
+            return r.d8(2) * APL * mul
         elif Type == "Giant":
-            return d4(2) * APL * mul
+            return r.d4(2) * APL * mul
         elif Type == "Humanoid":
-            return d6(2) * APL * min1(mul - 1)  #Need a fix for low setting to be 0.5 instead of 1. Not priority atm
+            return r.d6(2) * APL * min1(mul - 1)  #Need a fix for low setting to be 0.5 instead of 1. Not priority atm
         elif Type == "Monstrosity":
-            return d4(1) * (mul - 1)
+            return r.d4(1) * (mul - 1)
         elif Type == "Ooze":
-            return d12(2) * APL * min1(mul - 1)
+            return r.d12(2) * APL * min1(mul - 1)
         elif Type == "Plant":
-            return d10(2) * min1(mul - 1)
+            return r.d10(2) * min1(mul - 1)
         elif Type == "Undead":
-            return d4(2) * APL * min1(mul - 1)
+            return r.d4(2) * APL * min1(mul - 1)
 
 
         
@@ -71,37 +74,51 @@ def min1(x):
     else:
         return x
 
-#12 sided die
-def d12(x):
-    s = 0
-    for i in range(x):
-        s += np.random.randint(1, 12)
-    return s
 
-#Ten sided die
-def d10(x):
-    s = 0
-    for i in range(x):
-        s += np.random.randint(1, 10)
-    return s
 
-#Eight sided die
-def d8(x):
-    s = 0
-    for i in range(x):
-        s += np.random.randint(1, 8)
-    return s
+#Creates an instance of Dice
+class Dice():
+    #12 sided die
+    def d12(self, x):
+        s = 0
+        for i in range(x):
+            s += np.random.randint(1, 12)
+        return s
 
-#Six sided die
-def d6(x):
-    s = 0
-    for i in range(x):
-        s += np.random.randint(1, 6)
-    return s
+    #Ten sided die
+    def d10(self, x):
+        s = 0
+        for i in range(x):
+            s += np.random.randint(1, 10)
+        return s
 
-#Four sided die
-def d4(x):
-    s = 0
-    for i in range(x):
-        s += np.random.randint(1, 4)
-    return s
+    #Eight sided die
+    def d8(self, x):
+        s = 0
+        for i in range(x):
+            s += np.random.randint(1, 8)
+        return s
+
+    #Six sided die
+    def d6(self, x):
+        s = 0
+        for i in range(x):
+            s += np.random.randint(1, 6)
+        return s
+
+    #Four sided die
+    def d4(self, x):
+        s = 0
+        for i in range(x):
+            s += np.random.randint(1, 4)
+        return s
+
+
+
+if __name__ == "__main__":
+
+    roll = Dice()
+
+    print(roll.d4(2))
+    print(Individual_loot(5, "Aberration", 10))
+
