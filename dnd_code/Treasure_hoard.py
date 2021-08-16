@@ -91,4 +91,8 @@ def Treasure_Hoard(APL, Type, n):
     return TI
 
 
-
+def find_items(APL, n, tables):
+    cursed = 1
+    gc = 2
+    intense = 3
+    normal = 0
