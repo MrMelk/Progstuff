@@ -24,8 +24,14 @@ void get_odd(const complex* in, complex* out, const int n) {
 		out[i] = in[2 * i + 1];
 	}
 }
-
-void fft_compute(const complex* in, complex* out, const int n) {
+// helping function for saving twiddle-factors in memory
+void create_twiddle(complex* inout, const int n) {
+	for(int i = 0; i < n / 2; i++) {
+		inout[i] = cexp(0 - (2. * M_PI * i) / n * I);
+	}
+}
+//Wrapper funksjon
+void min_fft_compute(const complex* in, complex* out, const int n, const complex* w) {
 	if(n == 1) {
 		out[0] = in[0];
 	} else {
@@ -40,15 +46,14 @@ void fft_compute(const complex* in, complex* out, const int n) {
 		get_even(in, even, n);
 		get_odd(in, odd, n);
 		// Recursively calculate the result for bottom and top half
-		fft_compute(even, even_out, n / 2);
-		fft_compute(odd, odd_out, n / 2);
+		min_fft_compute(even, even_out, n / 2, w);
+		min_fft_compute(odd, odd_out, n / 2, w);
 		// Combine the output of the two previous recursions
 		for(int i = 0; i < half; ++i) {
 			const complex e = even_out[i];
 			const complex o = odd_out[i];
-			const complex w = cexp(0 - (2. * M_PI * i) / n * I);
-			out[i]        = e + w * o;
-			out[i + half] = e - w * o;
+			out[i]        = e + w[i] * o;
+			out[i + half] = e - w[i] * o;
 		}
 		// Since we allocated room for variables we need to release
 		// the memory!
@@ -57,4 +62,16 @@ void fft_compute(const complex* in, complex* out, const int n) {
 		free(even_out);
 		free(odd_out);
 	}
+}
+
+void fft_compute(const complex* in, complex* out, const int n) {
+	//allocate memory for twiddle factors
+	complex* w = malloc(sizeof(complex) * (n/2));
+	//fill with twiddle factors
+	create_twiddle(w, n);
+	//call the computing function
+	min_fft_compute(in, out, n, w);
+	//release the memory
+	free(w);
+
 }
