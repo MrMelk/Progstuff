@@ -1,1 +1,2 @@
-jeg ble stuck så fikk at 1+1 = 1
+Fikk at 2+1 = 0x400080 = et veldig lavt tall
+Åpenbart noe som går veldig galt men jeg finner ikke ut av det

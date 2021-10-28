@@ -25,4 +25,5 @@ loop:
 @ To be a good citizen we branch (and exchange) on the lr register
 @ to return to the caller
 exit:
+    ldr r0, r3
     BX lr
