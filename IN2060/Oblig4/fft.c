@@ -25,23 +25,13 @@ void get_odd(const complex* in, complex* out, const int n) {
 	}
 }
 
-void fft_compute(const complex* in, complex* out, const int n) {
+void kill_me(const complex* in, complex* out, const int n, int s) {
 	if(n == 1) {
 		out[0] = in[0];
 	} else {
-		const int half = n / 2;
-		// First we declare and allocate arrays
-		// Allocate enough room for half the input values
-		complex* even = malloc(sizeof(complex) * half);
-		complex* odd  = malloc(sizeof(complex) * half);
-		complex* even_out = malloc(sizeof(complex) * half);
-		complex* odd_out  = malloc(sizeof(complex) * half);
-		// Extract even and odd indexed numbers using methods above
-		get_even(in, even, n);
-		get_odd(in, odd, n);
 		// Recursively calculate the result for bottom and top half
-		fft_compute(even, even_out, n / 2);
-		fft_compute(odd, odd_out, n / 2);
+		kill_me(even, even_out, n / 2);
+		kill_me(odd, odd_out, n / 2);
 		// Combine the output of the two previous recursions
 		for(int i = 0; i < half; ++i) {
 			const complex e = even_out[i];
@@ -50,11 +40,28 @@ void fft_compute(const complex* in, complex* out, const int n) {
 			out[i]        = e + w * o;
 			out[i + half] = e - w * o;
 		}
-		// Since we allocated room for variables we need to release
-		// the memory!
-		free(even);
-		free(odd);
-		free(even_out);
-		free(odd_out);
+		
 	}
+}
+
+void fft_compute(const complex* in, complex* out, const int n) {
+	const int half = n / 2;
+	// First we declare and allocate arrays
+	// Allocate enough room for half the input values
+	complex* even = malloc(sizeof(complex) * half);
+	complex* odd  = malloc(sizeof(complex) * half);
+	complex* even_out = malloc(sizeof(complex) * half);
+	complex* odd_out  = malloc(sizeof(complex) * half);
+	// Extract even and odd indexed numbers using methods above
+	get_even(in, even, n);
+	get_odd(in, odd, n);
+
+
+
+	// Since we allocated room for variables we need to release
+	// the memory!
+	free(even);
+	free(odd);
+	free(even_out);
+	free(odd_out);
 }
