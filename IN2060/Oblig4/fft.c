@@ -9,6 +9,8 @@
 #include <math.h>
 // Included to get access to `malloc` and `free`
 #include <stdlib.h>
+#include <omp.h>
+
 
 // Forward declaration of helper methods
 void get_even(const complex* in, complex* out, const int n) {
@@ -55,6 +57,7 @@ void min_fft_compute(const complex* in, complex* out, const int n, complex** w) 
 		min_fft_compute(even, even_out, n / 2, w);
 		min_fft_compute(odd, odd_out, n / 2, w);
 		// Combine the output of the two previous recursions
+		#pragma omp parallel for
 		for(int i = 0; i < half; ++i) {
 			const complex e = even_out[i];
 			const complex o = odd_out[i];
