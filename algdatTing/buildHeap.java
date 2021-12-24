@@ -5,7 +5,7 @@ class buildHeap {
  
         int n = arr.length;
  
-        buildHeap(arr, n);
+        build_Heap(arr, n);
  
         printHeap(arr, n);
     }
@@ -39,7 +39,7 @@ class buildHeap {
         System.out.println();
     }
 
-    static void buildHeap(int arr[], int n) {
+    static void build_Heap(int arr[], int n) {
         int startIdx =  (n / 2) - 1;
 
         for (int i = startIdx; i >= 0; i--) {
